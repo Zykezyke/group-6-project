@@ -6,6 +6,8 @@ const Favorites = ({
   toggleFavorite,
   saveCurrentPage,
   currentPageByTitle,
+  collections,
+  addToCollection,
 }) => {
   return (
     <div className="favorites">
@@ -25,6 +27,8 @@ const Favorites = ({
               isFavorite={true}
               currentPage={currentPageByTitle[book.volumeInfo.title] || 1}
               saveCurrentPage={saveCurrentPage}
+              collections={collections}
+              addToCollection={(index) => addToCollection(index, book)}
             />
           </div>
         ))}

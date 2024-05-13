@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 const BookCard = (props) => {
   const [showDetails, setShowDetails] = useState(false);
   const [currentPage, setCurrentPage] = useState(props.currentPage || 1);
@@ -19,7 +18,6 @@ const BookCard = (props) => {
     props.saveCurrentPage(props.title, page);
   };
 
-  
   useEffect(() => {
     setCurrentPage(props.currentPage || 1);
   }, [props.currentPage]);
@@ -71,22 +69,30 @@ const BookCard = (props) => {
             onChange={handlePageChange}
           />
         </label>
-        <button className="fav-button" onClick={() => props.toggleFavorite(props.title)}>
-          {props.isFavorite ? <i class="fa-solid fa-heart"></i> : <i class="fa-regular fa-heart"></i>}
+        <button
+          className="fav-button"
+          onClick={() => props.toggleFavorite(props.title)}
+        >
+          {props.isFavorite ? (
+            <i class="fa-solid fa-heart"></i>
+          ) : (
+            <i class="fa-regular fa-heart"></i>
+          )}
         </button>
         <button className="read-button" onClick={toggleDetails}>
           {showDetails ? "Show Less Details" : "Read More Details"}
         </button>
-        
 
-        <select onChange={(e) => props.addToCollection(e.target.value)}>
-          <option value="">Add to collection...</option>
-          {props.collections.map((collection, index) => (
-            <option key={index} value={index}>
-              {collection.name}
-            </option>
-          ))}
-        </select>
+        {props.collections && (
+          <select onChange={(e) => props.addToCollection(e.target.value)}>
+            <option value="">Add to collection...</option>
+            {props.collections.map((collection, index) => (
+              <option key={index} value={index}>
+                {collection.name}
+              </option>
+            ))}
+          </select>
+        )}
       </div>
     </div>
   );

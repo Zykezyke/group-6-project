@@ -111,8 +111,8 @@ class Books extends Component {
           handleSearch={this.handleSearch}
           handleSort={this.handleSort}
         />
-        
-        <div className="image-content"> 
+
+        <div className="image-content">
           <img src={backgroundImage} />
           <h4>SOMETHING SOMETHING TEXT</h4>
         </div>
@@ -123,7 +123,7 @@ class Books extends Component {
           favorites={favorites}
           collections={collections}
           saveCurrentPage={this.saveCurrentPage}
-          currentPageByTitle={currentPageByTitle} // Pass currentPageByTitle as prop
+          currentPageByTitle={currentPageByTitle}
         />
       </div>
     );

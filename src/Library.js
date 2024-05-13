@@ -109,24 +109,28 @@ const Library = ({ books, toggleFavorite, favorites }) => {
             toggleFavorite={toggleFavorite}
             saveCurrentPage={saveCurrentPage}
             currentPageByTitle={currentPageByTitle}
+            collections={collections}
+            addToCollection={addToCollection}
           />
         </div>
       )}
-      <center><button onClick={() => setShowFavorites(!showFavorites)}>
-        {showFavorites ? "Hide Favorites" : "Show Favorites"}
-      </button></center>
+      <center>
+        <button onClick={() => setShowFavorites(!showFavorites)}>
+          {showFavorites ? "Hide Favorites" : "Show Favorites"}
+        </button>
+      </center>
       <div className="container">
         <hr></hr>
-          <div className="create-col">
+        <div className="create-col">
           <h2>Create your collection</h2>
-              <input
-                className="collect-input"
-                type="text"
-                value={newCollectionName}
-                onChange={handleNewCollectionNameChange}
-              />
-              <button onClick={createCollection}>Create Collection</button>
-          </div>         
+          <input
+            className="collect-input"
+            type="text"
+            value={newCollectionName}
+            onChange={handleNewCollectionNameChange}
+          />
+          <button onClick={createCollection}>Create Collection</button>
+        </div>
       </div>
       <div>
         {collections.map((collection, index) => (
@@ -139,7 +143,6 @@ const Library = ({ books, toggleFavorite, favorites }) => {
               saveCurrentPage={saveCurrentPage}
               currentPageByTitle={currentPageByTitle}
             />
-            
           </div>
         ))}
       </div>
