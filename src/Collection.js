@@ -8,6 +8,7 @@ const Collection = ({
   updateName,
   saveCurrentPage,
   currentPageByTitle,
+  deleteCollection,
 }) => {
   const [editMode, setEditMode] = useState(false);
   const [newName, setNewName] = useState(name);
@@ -45,6 +46,7 @@ const Collection = ({
             <button onClick={toggleExpand}>
               {isExpanded ? "Hide Books" : "Show Books"}
             </button>
+            <button onClick={deleteCollection}>Delete</button>
           </>
         )}
       </div>
