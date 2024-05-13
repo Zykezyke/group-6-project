@@ -4,9 +4,9 @@
 }
 
 header {
-  padding: 30px 0 30px 0;
-  background: #343a40;
-  color: #fff;
+  padding: 30px 30px 30px 0;
+  background: yellow;
+  color: black;
   text-align: center;
 }
 
@@ -57,30 +57,58 @@ header h1 {
 
 .card-container {
   width: 300px;
-  margin: auto;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 5px;
+  background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  overflow: hidden;
 }
 
-.card-container img {
-  height: 200px;
+.card-container h2,
+.card-container h3,
+.card-container p {
+  margin: 5px 0;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.no-image {
-  width: 200px;
-  height: 200px;
-  border: 2px dashed #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.image-container {
+  flex: 1;
 }
 
-.no-image p {
-  color: #666;
-  font-weight: bold;
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.desc button {
+  margin-top: 5px;
+  padding: 6px 8px;
+  font-size: 10px;
 }
 
+h2,
+h3,
+p {
+  margin: 5px 0;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+button {
+  padding: 6px 12px;
+  font-size: 12px;
+  align-self: flex-start;
+}
 .list {
   display: flex;
   flex-wrap: wrap;
@@ -89,4 +117,61 @@ header h1 {
 
 .book-wrapper {
   margin: 10px;
+}
+.navbar {
+  background-color: yellow;
+  color: black;
+  padding: 10px 20px;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand h1 {
+  margin-left: 15px;
+  font-weight: 300;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.search-button {
+  background-color: transparent;
+  color: black;
+  border: none;
+  padding: 10px 5px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.search-button i {
+  padding: 7px;
+  margin-right: 5px;
+}
+
+.sort-select {
+  padding: 10px;
+  border-radius: 10px;
+  border-color: transparent;
+  margin-left: 10px;
+  cursor: pointer;
+  background: transparent;
+  color: black;
 }

@@ -1,13 +1,85 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  font-family: "Poppins", sans-serif;
+  color: var(--black-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+/* body {
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+ 
+} */
+
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+} */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --purple-color: #8d27ae;
+  --pink-color: #d9176d;
+  --grey-color: #f3f3f3;
+  --white-color: #fff;
+  --black-color: #010101;
+  --light-black-color: #717171;
+  --transition: all 300ms ease-in-out;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+}
+.search-area {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Align items to the start and end of the container */
+  align-items: center; /* Align items vertically */
+  margin-bottom: 20px;
+  background-color: yellow;
+}
+
+.search-area form {
+  display: flex; /* Use flexbox for form layout */
+  align-items: center; /* Align form items vertically */
+}
+
+.search-area input[type="text"] {
+  flex: 1; /* Allow the input to grow and take up remaining space */
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.search-area button[type="submit"] {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 10px 5px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.search-area button[type="submit"] i {
+  padding: 7px;
+  margin-right: 5px;
+  color: black;
+}
+
+.search-area select {
+  padding: 10px;
+  border-radius: 10px;
+  border-color: transparent;
+  margin-left: 10px;
+  cursor: pointer;
+  background: transparent;
 }
