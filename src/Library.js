@@ -94,39 +94,39 @@ const Library = ({ books, toggleFavorite, favorites }) => {
                 )}
                 currentPage={currentPageByTitle[book.volumeInfo.title] || 1}
                 saveCurrentPage={saveCurrentPage}
+                collections={collections}
+                addToCollection={(index) => addToCollection(index, book)}
               />
-              <div>
-                <select onChange={(e) => addToCollection(e.target.value, book)}>
-                  <option value="">Add to collection...</option>
-                  {collections.map((collection, index) => (
-                    <option key={index} value={index}>
-                      {collection.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
             </div>
           );
         })}
       </div>
       {showFavorites && (
-        <Favorites
-          favorites={favorites}
-          toggleFavorite={toggleFavorite}
-          saveCurrentPage={saveCurrentPage}
-          currentPageByTitle={currentPageByTitle}
-        />
+        <div className="container">
+          <hr></hr>
+          <Favorites
+            favorites={favorites}
+            toggleFavorite={toggleFavorite}
+            saveCurrentPage={saveCurrentPage}
+            currentPageByTitle={currentPageByTitle}
+          />
+        </div>
       )}
-      <button onClick={() => setShowFavorites(!showFavorites)}>
+      <center><button onClick={() => setShowFavorites(!showFavorites)}>
         {showFavorites ? "Hide Favorites" : "Show Favorites"}
-      </button>
-      <div>
-        <input
-          type="text"
-          value={newCollectionName}
-          onChange={handleNewCollectionNameChange}
-        />
-        <button onClick={createCollection}>Create Collection</button>
+      </button></center>
+      <div className="container">
+        <hr></hr>
+          <div className="create-col">
+          <h2>Create your collection</h2>
+              <input
+                className="collect-input"
+                type="text"
+                value={newCollectionName}
+                onChange={handleNewCollectionNameChange}
+              />
+              <button onClick={createCollection}>Create Collection</button>
+          </div>         
       </div>
       <div>
         {collections.map((collection, index) => (
@@ -138,8 +138,8 @@ const Library = ({ books, toggleFavorite, favorites }) => {
               updateName={(newName) => updateCollectionName(index, newName)}
               saveCurrentPage={saveCurrentPage}
               currentPageByTitle={currentPageByTitle}
-              deleteCollection={() => deleteCollection(index)}
             />
+            
           </div>
         ))}
       </div>

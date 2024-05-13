@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Header from "./Header";
 import Books from "./Books";
 import "./App.css";
+import Footer from "./Footer";
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Books />
+        <Footer />
       </div>
     );
   }

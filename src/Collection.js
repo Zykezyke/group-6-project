@@ -46,7 +46,7 @@ const Collection = ({
             <button onClick={toggleExpand}>
               {isExpanded ? "Hide Books" : "Show Books"}
             </button>
-            <button onClick={deleteCollection}>Delete</button>
+            <button className="delete-btn" onClick={deleteCollection}>Delete</button>
           </>
         )}
       </div>

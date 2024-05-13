@@ -3,6 +3,7 @@ import SearchArea from "./SearchArea";
 import request from "superagent";
 import "./App.css";
 import Library from "./Library";
+import backgroundImage from "./images/background-image.png";
 
 class Books extends Component {
   constructor(props) {
@@ -110,13 +111,19 @@ class Books extends Component {
           handleSearch={this.handleSearch}
           handleSort={this.handleSort}
         />
+        
+        <div className="image-content"> 
+          <img src={backgroundImage} />
+          <h4>SOMETHING SOMETHING TEXT</h4>
+        </div>
+
         <Library
           books={sortedBooks}
           toggleFavorite={this.toggleFavorite}
           favorites={favorites}
           collections={collections}
           saveCurrentPage={this.saveCurrentPage}
-          currentPageByTitle={currentPageByTitle}
+          currentPageByTitle={currentPageByTitle} // Pass currentPageByTitle as prop
         />
       </div>
     );
