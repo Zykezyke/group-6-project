@@ -116,7 +116,7 @@ class Books extends Component {
           favorites={favorites}
           collections={collections}
           saveCurrentPage={this.saveCurrentPage}
-          currentPageByTitle={currentPageByTitle} // Pass currentPageByTitle as prop
+          currentPageByTitle={currentPageByTitle}
         />
       </div>
     );

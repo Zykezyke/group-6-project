@@ -60,7 +60,7 @@ const Collection = ({
                 pages={book.pageCount}
                 deleteBook={deleteBook}
                 currentPage={currentPageByTitle[book.title] || 1}
-                handlePageChange={(title, page) => saveCurrentPage(title, page)}
+                saveCurrentPage={saveCurrentPage}
               />
             </div>
           ))}
