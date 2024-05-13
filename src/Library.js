@@ -142,6 +142,7 @@ const Library = ({ books, toggleFavorite, favorites }) => {
               updateName={(newName) => updateCollectionName(index, newName)}
               saveCurrentPage={saveCurrentPage}
               currentPageByTitle={currentPageByTitle}
+              deleteCollection={() => deleteCollection(index)}
             />
           </div>
         ))}
