@@ -11,7 +11,7 @@ const Favorites = ({
 }) => {
   return (
     <div className="favorites">
-      <h2>Your Favorites</h2>
+      <h1>Your Favorites</h1>
       <div className="list">
         {favorites.map((book, i) => (
           <div key={i} className="book-wrapper">

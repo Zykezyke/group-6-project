@@ -58,7 +58,14 @@ const BookCard = (props) => {
             </p>
           </>
         )}
-        <p>Pages: {props.pages}</p>
+        <p>
+          Pages:{" "}
+          {props.pages === undefined
+            ? "Not Available"
+            : props.pages === ""
+            ? "Not Available"
+            : props.pages}
+        </p>
         <label>
           Current Page:
           <input

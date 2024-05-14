@@ -114,7 +114,21 @@ class Books extends Component {
 
         <div className="image-content">
           <img src={backgroundImage} />
-          <h4>SOMETHING SOMETHING TEXT</h4>
+          <h4>Find Your Book of Choice</h4>
+          <p>
+            Explore a wide range of genres and discover your next favorite read.
+          </p>
+          <form onSubmit={this.searchBook} action="" className="search-form">
+            <div className="search-input">
+              {" "}
+              <input
+                onChange={this.handleSearch}
+                type="text"
+                required
+                placeholder="Search..."
+              />
+            </div>
+          </form>
         </div>
 
         <Library

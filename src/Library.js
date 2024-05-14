@@ -76,6 +76,34 @@ const Library = ({ books, toggleFavorite, favorites }) => {
 
   return (
     <div>
+      <div className="container">
+        <hr></hr>
+        <div className="create-col">
+          <h2>Create your collection</h2>
+          <input
+            className="collect-input"
+            type="text"
+            value={newCollectionName}
+            onChange={handleNewCollectionNameChange}
+          />
+          <button onClick={createCollection}>Create Collection</button>
+        </div>
+      </div>
+      <div>
+        {collections.map((collection, index) => (
+          <div key={index}>
+            <Collection
+              name={collection.name}
+              books={collection.books}
+              deleteBook={(book) => deleteBookFromCollection(index, book)}
+              updateName={(newName) => updateCollectionName(index, newName)}
+              saveCurrentPage={saveCurrentPage}
+              currentPageByTitle={currentPageByTitle}
+              deleteCollection={() => deleteCollection(index)}
+            />
+          </div>
+        ))}
+      </div>
       <div className="list">
         {books.map((book, i) => {
           return (
@@ -119,34 +147,6 @@ const Library = ({ books, toggleFavorite, favorites }) => {
           {showFavorites ? "Hide Favorites" : "Show Favorites"}
         </button>
       </center>
-      <div className="container">
-        <hr></hr>
-        <div className="create-col">
-          <h2>Create your collection</h2>
-          <input
-            className="collect-input"
-            type="text"
-            value={newCollectionName}
-            onChange={handleNewCollectionNameChange}
-          />
-          <button onClick={createCollection}>Create Collection</button>
-        </div>
-      </div>
-      <div>
-        {collections.map((collection, index) => (
-          <div key={index}>
-            <Collection
-              name={collection.name}
-              books={collection.books}
-              deleteBook={(book) => deleteBookFromCollection(index, book)}
-              updateName={(newName) => updateCollectionName(index, newName)}
-              saveCurrentPage={saveCurrentPage}
-              currentPageByTitle={currentPageByTitle}
-              deleteCollection={() => deleteCollection(index)}
-            />
-          </div>
-        ))}
-      </div>
     </div>
   );
 };
