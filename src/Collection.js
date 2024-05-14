@@ -33,7 +33,7 @@ const Collection = ({
 
   return (
     <div>
-      <div style={{ display: "flex", alignItems: "center" }}>
+      <div className="collection-item">
         {editMode ? (
           <>
             <input type="text" value={newName} onChange={handleNameChange} />
@@ -42,14 +42,17 @@ const Collection = ({
         ) : (
           <>
             <h3>{name}</h3>
-            <button onClick={() => setEditMode(true)}>Edit Name</button>
-            <button onClick={toggleExpand}>
-              {isExpanded ? "Hide Books" : "Show Books"}
-            </button>
-            <button onClick={deleteCollection}>Delete</button>
+            <div className="button-group">
+              <button onClick={() => setEditMode(true)}>Edit Name</button>
+              <button onClick={toggleExpand}>
+                {isExpanded ? "Hide Books" : "Show Books"}
+              </button>
+              <button onClick={deleteCollection}>Delete</button>
+            </div>
           </>
         )}
       </div>
+
       {isExpanded && (
         <div className="list">
           {books.map((book, index) => (
