@@ -21,6 +21,9 @@ const Library = ({ books, toggleFavorite, favorites }) => {
         "A collection with the same name already exists. Please choose a different name."
       );
       return;
+    } else if (!newCollectionName) {
+      alert("Please enter a name for your collection.");
+      return;
     }
 
     setCollections([...collections, { name: newCollectionName, books: [] }]);
