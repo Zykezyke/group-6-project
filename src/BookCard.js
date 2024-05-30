@@ -49,7 +49,7 @@ const BookCard = (props) => {
                 ? ""
                 : "Genre(s): " + props.genre}
             </p>
-            <p>
+            <p style={{ overflow: "auto" }}>
               {props.description === undefined
                 ? "Description Not Available"
                 : props.description === ""
@@ -63,6 +63,8 @@ const BookCard = (props) => {
           {props.pages === undefined
             ? "Not Available"
             : props.pages === ""
+            ? "Not Available"
+            : props.pages === 0
             ? "Not Available"
             : props.pages}
         </p>

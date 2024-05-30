@@ -71,6 +71,9 @@ const Collection = ({
           ))}
         </div>
       )}
+      <center>
+        <hr></hr>
+      </center>
     </div>
   );
 };

@@ -24,10 +24,20 @@ class Books extends Component {
     request
       .get("https://www.googleapis.com/books/v1/volumes")
       .query({ q: this.state.searchField, maxResults })
-      .then((data) => {
-        console.log(data);
-        const cleanData = this.cleanData(data);
-        this.setState({ books: cleanData });
+      .then((response) => {
+        console.log(response);
+        if (response.body.items && response.body.items.length > 0) {
+          const cleanData = this.cleanData(response);
+          this.setState({ books: cleanData, noBooksFound: false });
+        } else {
+          this.setState({ books: [], noBooksFound: true });
+          window.alert("No books found for your search query.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching books:", error);
+        this.setState({ books: [], noBooksFound: true });
+        window.alert("No books found for your search query.");
       });
   };
 
